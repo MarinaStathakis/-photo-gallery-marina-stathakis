@@ -22,8 +22,8 @@ archives/
 
 # Build Outputs
 dist/
-build/
-out/
+# Protect API key
+.env
 
 # Editing Software Temp Files
 *.tmp
