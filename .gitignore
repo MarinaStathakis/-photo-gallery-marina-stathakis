@@ -1,47 +1,42 @@
-# Logs
-logs
-*.log
+# Node.js Defaults
+node_modules/
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+.env
+.env.local
 
 # Photography Specific Exclusions
 *.psd        # Photoshop files
 *.raw        # RAW image files
 *.tiff       # High-resolution images
 *.backup     # Backup image files
-_notes/      # Adobe Bridge notes
 Thumbs.db    # Windows thumbnail cache
 .DS_Store    # macOS system files
-
-# Dependency Directories
-node_modules/
-jspm_packages/
-
-# Environment Files
-.env
-.env.local
-.env.development.local
-
-# Build Output
-dist/
-build/
 
 # Large Media Files
 *.zip
 *.gz
 *.tar
+images/originals/
+archives/
+
+# Build Outputs
+dist/
+build/
+out/
 
 # Editing Software Temp Files
 *.tmp
 *.swp
 
-# VSCode Settings
-.vscode/
+# Development Caches
+.cache/
+.parcel-cache/
 
-# Backup Directories
-backup/
-archives/
+# IDE Configurations
+.vscode/
+.idea/
 
 # Sensitive Information
 credentials.txt
+*.key
