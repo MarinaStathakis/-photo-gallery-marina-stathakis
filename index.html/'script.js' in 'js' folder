@@ -1,0 +1,28 @@
+const API_KEY = 'zH0oJOqcXpg3rAf14NyNtd3nniOZ1nyVDUz5o3CCFRMqkhQCu5y7eP7s';
+
+async function fetchPhotos() {
+    try {
+        const response = await fetch('https://api.pexels.com/v1/search?query=landscape&per_page=9', {
+            headers: {
+                'Authorization': API_KEY
+            }
+        });
+        const data = await response.json();
+        displayPhotos(data.photos);
+    } catch (error) {
+        console.error('Error fetching photos:', error);
+    }
+}
+
+function displayPhotos(photos) {
+    const container = document.getElementById('image-container');
+    photos.forEach(photo => {
+        const img = document.createElement('img');
+        img.src = photo.src.medium;
+        img.alt = photo.photographer;
+        container.appendChild(img);
+    });
+}
+
+// Call function when page loads
+document.addEventListener('DOMContentLoaded', fetchPhotos);
